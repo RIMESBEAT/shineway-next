@@ -6,6 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-bg: #fbfcff;
+  --trans-bg: #ffffff15;
+  --trans-black-bg: #0e0d0d15;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,13 +18,105 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--primary-bg);
+}
+
+a {
+  color: unset;
+}
+.trans_black__bg {
+  background: var(--trans-black-bg);
+}
+
+.trans__bg {
+  background: var(--trans-bg);
+}
+
+.main__container {
+  padding: 2rem 6rem;
+}
+
+.last__child:last-child {
+  background: #ff4500;
+  padding: 10px 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
+.last__child:last-child:hover {
+  background: red;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .main__container {
+    padding: 2rem;
+  }
+}
+
+.scale-up-hor-center {
+  -webkit-animation: scale-up-hor-center 0.4s
+    cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-hor-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@-webkit-keyframes scale-up-hor-center {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+@keyframes scale-up-hor-center {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+.rotate-90-ccw {
+  -webkit-animation: rotate-90-ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: rotate-90-ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes rotate-90-ccw {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+@keyframes rotate-90-ccw {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+/* #213140 --blue 
+#F2CC0C --yellow
+*/
+/* 
+#b8e900 --green
+
+*/
